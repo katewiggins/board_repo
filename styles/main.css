@@ -2,17 +2,19 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #CFD7C7;
+  background-color: #7D869C;
   color: #000;
 }
 
 header {
   justify-content: left;
-  background-color: #0B2027;
+  background-color: #586994;
   color: #fff;
   margin: 0;
   padding: 40px;
+
 }
+
 
 header h1 {
   font-size: 68px;
@@ -21,24 +23,9 @@ header h1 {
 
 #intro {
   text-align: center;
-  margin: 50px 40px 100px 40px;
+  padding: 20px;
   line-height: 30px;
   font-size: 20px;
-}
-
-.article {
-  margin: 0;
-}
-
-#dj-board-description {
-  text-align: center;
-  margin: auto;
-  max-width: 600px;
-}
-
-#dj-board-description li {
-  margin-bottom: 10px;
-  list-style: none;
 }
 
 .album-covers {
@@ -80,11 +67,23 @@ header h1 {
   opacity: 1;
 }
 
+#dj-board-description {
+  text-align: center;
+  margin: auto;
+  max-width: 600px;
+}
+
+#dj-board-description li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+
 footer {
   text-align: center;
-  background-color: #0B2027;
+  background-color:#586994;
   color: #fff;
-  padding: 10px 0;
+  padding: 50px;
   width: 100%;
 }
 
@@ -100,7 +99,6 @@ footer {
   max-width: 600px;
   display: block;
   margin: 0 auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .image-caption {
