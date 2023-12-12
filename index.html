@@ -4,25 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJ Board App</title>
+    <title>Digital DJ Board</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="javascript/script.js" defer></script>
 </head>
 
 <body>
-    <div class="dj-board-container">
-        <img src="images/dj_board_image2.png" alt="DJ Board Image" class="dj-board-image">
-        <div>
-            <button class="button button1" onclick="toggleAudio('audio/dev_bassdownlow.mp3', 'audio1')"></button>
-            <button class="button button2"
-                onclick="toggleAudio('audio/juniorjack_myfeeling.mp3', 'audio2')"></button>
-            <!-- Add more buttons as needed -->
+    <header>
+        <h1>WHAT DO DJS <em>ACTUALLY</em> DO?</h1>
+    </header>
+
+    <p id="intro">Based on the Pioneer DJ DDJ-REV1-N Serato Performance DJ Controller.<br><br>Enjoy!</p>
+
+    <article>
+        <div class="dj-board-container">
+            <img src="images/dj_board_image2.png" alt="DJ Board Image" class="dj-board-image">
+            <p class="image-caption"><em>Image taken by Kate Wiggins.</em></p>
+            
+            <div id="crossfader-container" class="vertical-slider-container">
+                <input type="range" id="crossfader" class="vertical-slider" value="50">
+                <button class="faderButton" onclick="startBothSongs()">CUE</button>
+            </div>
+            
+            <div class="audio-container">
+                <button class="button button1" onclick="toggleAudio('audio/dev_bassdownlow.mp3', 'audio1')">PLAY/PAUSE</button>
+                <input class="bassSlider" type="range" min="0" max="100" step="1" onchange="setVolume(1, this.value)">
+            </div>
+            
+            <div class="audio-container">
+                <button class="button button2" onclick="toggleAudio('audio/juniorjack_myfeeling.mp3', 'audio2')">PLAY/PAUSE</button>
+                <input class="jackSlider" type="range" min="0" max="100" step="1" onchange="setVolume(2, this.value)">
+            </div>
+            
+            <div>
+                <audio id="jogWheel1" src="audio/jogWheel.mp3"></audio>
+                <button id="button3" onclick="document.getElementById('jogWheel1').play()">JOGWHEEL</button>
+            </div>
+            
+            <div>
+                <audio id="jogWheel2" src="audio/jogWheel.mp3"></audio>
+                <button id="button4" onclick="document.getElementById('jogWheel2').play()">JOGWHEEL</button>
+            </div>
+
+            <div>
+                <button id="button5" onclick="toggleAudio('audio/bass_high.mp3')">HIGH</button>
+            </div>
+
+            <div>
+                <button id="button6" onclick="toggleAudio('audio/jack_low.mp3')">LOW</button>
+            </div>
         </div>
-        <div class="slidecontainer">
-            <input type="range" id="volume" value="100">
-            <button type="button" id="play">Play/Pause Audio</button>
+
+        <ul id="dj-board-description">
+            <li>Press the 'PLAY/PAUSE' buttons to play either song.</li>
+            <li>Use the vertical sliders to adjust the volume.</li>
+            <li>Press the 'CUE' button to play both songs at the same time.</li>
+            <li>Use the crossfader to fade in/out a song. </li>
+            <li>Press on the 'JOGWHEEL' to create a record scratch effect.</li>
+            <li>Press the 'HIGH' button to put a high pass filter on song 1.</li>
+            <li>Press the 'LOW' button to put a low pass filter on song 2.</li>
+        </ul>
+
+        <div class="album-covers">
+            <div class="album-cover">
+                <a href="https://soundcloud.com/glass_half_empty/bass-down-loww?si=75fadf91098040758ecf38680db64b67&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
+                    <img src="images/bass_image.png" alt="Bass Album Cover" class="album-cover">
+                    <p class="caption1">SONG 1<br>DEV ft. The Cataracs - Bass Down Low (Glass Half Empty Remix)</p>
+                </a>
+            </div>
+            <div class="album-cover">
+                <a href="https://soundcloud.com/markodem/junior-jack-my-feeling-markodem-bootleg?si=00aaaf12263946bb8a39abfcb03ec7a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">
+                    <img src="images/jack_image.png" alt="Jack Album Cover" class="album-cover">
+                    <p class="caption2">SONG 2<br>Junior Jack - My Feeling (Markodem Bootleg)</p>
+                </a>
+            </div>
         </div>
-    </div>
+    </article>
+
+    <footer>
+        <p>&copy; Project by Kate Wiggins. Fall 2023.</p>
+    </footer>
+
+    <script src="javascript/script.js" defer></script>
 </body>
 
 </html>
